@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Site Properties -->
+    <title>Fixed Menu Example - Semantic</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/reset.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/site.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/container.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/grid.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/image.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/menu.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/divider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/list.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/segment.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/dropdown.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/components/icon.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/semantic.min.css') }}">
+
+    <script src="{{ url_for('static', filename='dist/components/form.js') }}"></script>
+    <script src="{{ url_for('static', filename='dist/components/transition.js') }}"></script>
+
+    <style type="text/css">
+        body {
+        background-color: #FFFFFF;
+        }
+        .ui.menu .item img.logo {
+        margin-right: 1.5em;
+        }
+        .main.container {
+        margin-top: 7em;
+        }
+        .wireframe {
+        margin-top: 2em;
+        }
+        .ui.footer.segment {
+        margin: 5em 0em 0em;
+        padding: 1em 0em;
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="ui fixed inverted menu">
+    <div class="ui container">
+        <a href="/" class="header item">
+            <!--<img class="logo" src="assets/images/logo.png">-->
+            Used Car Pricing Prediction
+        </a>
+        <a href="/" class="item">Home</a>
+    </div>
+</div>
+
+<div class="ui main text container">
+
+    <h1 class="ui header">One-Click Used Car Pricing Prediction</h1>
+
+    <form class="ui form" action="/predict_price" method="post">
+        <div class="field">
+            <label>Year</label>
+            <select class="ui selection dropdown" name="Car_Year">
+                <option value=""></option>
+                <option value="1">1997</option>
+                <option value="2">1998</option>
+                <option value="3">1999</option>
+                <option value="4">2000</option>
+                <option value="5">2001</option>
+                <option value="6">2002</option>
+                <option value="7">2003</option>
+                <option value="8">2004</option>
+                <option value="9">2005</option>
+                <option value="10">2006</option>
+                <option value="11">2007</option>
+                <option value="12">2008</option>
+                <option value="13">2009</option>
+                <option value="14">2010</option>
+                <option value="15">2011</option>
+                <option value="16">2012</option>
+                <option value="17">2013</option>
+                <option value="18">2014</option>
+                <option value="19">2015</option>
+                <option value="20">2016</option>
+                <option value="21">2017</option>
+                <option value="22">2018</option>
+            </select>
+        </div>
+        <div class="field">
+            <label>Make</label>
+            <select class="ui selection dropdown" name="Car_Make">
+                <option value=""></option>
+                <option value="1">Acura</option>
+                <option value="2">Alfa</option>
+                <option value="3">AM</option>
+                <option value="4">Aston</option>
+                <option value="5">Audi</option>
+                <option value="6">Bentley</option>
+                <option value="7">BMW</option>
+                <option value="8">Buick</option>
+                <option value="9">Cadillac</option>
+                <option value="10">Chevrolet</option>
+                <option value="11">Chrysler</option>
+                <option value="12">Dodge</option>
+                <option value="13">Ferrari</option>
+                <option value="14">FIAT</option>
+                <option value="15">Fisker</option>
+                <option value="16">Ford</option>
+                <option value="17">Freightliner</option>
+                <option value="18">Genesis</option>
+                <option value="19">Geo</option>
+                <option value="20">GMC</option>
+                <option value="21">Honda</option>
+                <option value="22">HUMMER</option>
+                <option value="23">Hyundai</option>
+                <option value="24">INFINITI</option>
+                <option value="25">Isuzu</option>
+                <option value="26">Jaguar</option>
+                <option value="27">Jeep</option>
+                <option value="28">Kia</option>
+                <option value="29">Lamborghini</option>
+                <option value="30">Land</option>
+                <option value="31">Lexus</option>
+                <option value="32">Lincoln</option>
+                <option value="33">Lotus</option>
+                <option value="34">Maserati</option>
+                <option value="35">Maybach</option>
+                <option value="36">Mazda</option>
+                <option value="37">McLaren</option>
+                <option value="38">Mercedes-Benz</option>
+                <option value="39">Mercury</option>
+                <option value="40">MINI</option>
+                <option value="41">Mitsubishi</option>
+                <option value="42">Nissan</option>
+                <option value="43">Oldsmobile</option>
+                <option value="44">Plymouth</option>
+                <option value="45">Pontiac</option>
+                <option value="46">Porsche</option>
+                <option value="47">Ram</option>
+                <option value="48">Rolls-Royce</option>
+                <option value="49">Saab</option>
+                <option value="50">Saturn</option>
+                <option value="51">Scion</option>
+                <option value="52">smart</option>
+                <option value="53">Subaru</option>
+                <option value="54">Suzuki</option>
+                <option value="55">Tesla</option>
+                <option value="56">Toyota</option>
+                <option value="57">Volkswagen</option>
+                <option value="58">Volvo</option>
+            </select>
+        <div class="field">
+            <label>Model</label>
+            <select class="ui selection dropdown" name="Car_Model">
+                <option value=""></option>
+                <option value="1">500</option>
+                <option value="2">A3</option>
+                <option value="3">A4</option>
+                <option value="4">A5</option>
+                <option value="5">A6</option>
+                <option value="6">A7</option>
+                <option value="7">A8</option>
+                <option value="8">Acadia</option>
+                <option value="9">Accent</option>
+                <option value="10">Accord</option>
+                <option value="11">Amanti</option>
+                <option value="12">Astro</option>
+                <option value="13">Avalanche</option>
+                <option value="14">Avenger</option>
+                <option value="15">Aviator</option>
+                <option value="16">Bolt</option>
+                <option value="17">Caliber</option>
+                <option value="18">Camaro</option>
+                <option value="19">Canyon</option>
+                <option value="20">Cavalier</option>
+                <option value="21">Century</option>
+                <option value="22">Challenger</option>
+                <option value="23">Charger</option>
+                <option value="24">Cherokee</option>
+                <option value="25">Civic</option>
+                <option value="26">CL</option>
+                <option value="27">Club</option>
+                <option value="28">Cobalt</option>
+                <option value="29">Colorado</option>
+                <option value="30">Commander</option>
+                <option value="31">Compass</option>
+                <option value="32">Concorde</option>
+                <option value="33">Concours</option>
+                <option value="34">Continental</option>
+                <option value="35">Contour</option>
+                <option value="36">Corvette</option>
+                <option value="37">CR-V</option>
+                <option value="38">CR-Z</option>
+                <option value="39">Crossfire</option>
+                <option value="40">CrosstourEX</option>
+                <option value="41">Crown</option>
+                <option value="42">Cruze</option>
+                <option value="43">CT</option>
+                <option value="44">CTS</option>
+                <option value="45">Dakota</option>
+                <option value="46">Dart</option>
+                <option value="47">Denali</option>
+                <option value="48">DeVille</option>
+                <option value="49">DTS</option>
+                <option value="50">Durango</option>
+                <option value="51">E-Series</option>
+                <option value="52">Econoline</option>
+                <option value="53">Edge</option>
+                <option value="54">Elantra</option>
+                <option value="55">Eldorado</option>
+                <option value="56">Element</option>
+                <option value="57">Elise</option>
+                <option value="58">ELR</option>
+                <option value="59">Enclave</option>
+                <option value="60">Encore</option>
+                <option value="61">Entourage</option>
+                <option value="62">Envision</option>
+                <option value="63">Envoy</option>
+                <option value="64">Equinox</option>
+                <option value="65">Equus</option>
+                <option value="66">Escalade</option>
+                <option value="67">Escape</option>
+                <option value="68">Escort</option>
+                <option value="69">EX35</option>
+                <option value="70">Excursion</option>
+                <option value="71">Exige</option>
+                <option value="72">Expedition</option>
+                <option value="73">Explorer</option>
+                <option value="74">F-150</option>
+                <option value="75">F-250</option>
+                <option value="76">F-350</option>
+                <option value="77">F-TYPE</option>
+                <option value="78">FF</option>
+                <option value="79">Fiesta</option>
+                <option value="80">Fit</option>
+                <option value="81">Five</option>
+                <option value="82">Flex</option>
+                <option value="83">Flying</option>
+                <option value="84">Focus</option>
+                <option value="85">Forte</option>
+                <option value="86">Freestar</option>
+                <option value="87">Freestyle</option>
+                <option value="88">Fusion</option>
+                <option value="89">FX35</option>
+                <option value="90">FX45</option>
+                <option value="91">FX50</option>
+                <option value="92">G20</option>
+                <option value="93">Gallardo</option>
+                <option value="94">General</option>
+                <option value="95">Genesis</option>
+                <option value="96">Grand</option>
+                <option value="97">GS</option>
+                <option value="98">GT</option>
+                <option value="99">GX</option>
+                <option value="100">HHR</option>
+                <option value="101">Hombre</option>
+                <option value="102">HR-V</option>
+                <option value="103">Huracan</option>
+                <option value="104">I30</option>
+                <option value="105">ILX</option>
+                <option value="106">Impala</option>
+                <option value="107">Insight</option>
+                <option value="108">Intrepid</option>
+                <option value="109">Ioniq</option>
+                <option value="110">IS</option>
+                <option value="111">Jimmy</option>
+                <option value="112">Journey</option>
+                <option value="113">K900</option>
+                <option value="114">Karma</option>
+                <option value="115">LaCrosse</option>
+                <option value="116">LeSabre</option>
+                <option value="117">Liberty</option>
+                <option value="118">LS</option>
+                <option value="119">Lucerne</option>
+                <option value="120">Lumina</option>
+                <option value="121">LX</option>
+                <option value="122">M2</option>
+                <option value="123">M3</option>
+                <option value="124">M35</option>
+                <option value="125">M37</option>
+                <option value="126">M4</option>
+                <option value="127">M5</option>
+                <option value="128">M56</option>
+                <option value="129">M6</option>
+                <option value="130">Magnum</option>
+                <option value="131">Malibu</option>
+                <option value="132">Mark</option>
+                <option value="133">Martin</option>
+                <option value="134">MDX</option>
+                <option value="135">MKC</option>
+                <option value="136">MKS</option>
+                <option value="137">MKT</option>
+                <option value="138">MKX</option>
+                <option value="139">MKZ</option>
+                <option value="140">Monte</option>
+                <option value="141">Mulsanne</option>
+                <option value="142">Murcielago</option>
+                <option value="143">Mustang</option>
+                <option value="144">Navigator</option>
+                <option value="145">Neon</option>
+                <option value="146">Nitro</option>
+                <option value="147">NSX</option>
+                <option value="148">Odyssey</option>
+                <option value="149">Optima</option>
+                <option value="150">Pacifica</option>
+                <option value="151">Patriot</option>
+                <option value="152">Pilot</option>
+                <option value="153">porte</option>
+                <option value="154">Prelude</option>
+                <option value="155">Prizm</option>
+                <option value="156">Prowler</option>
+                <option value="157">Q3</option>
+                <option value="158">Q40</option>
+                <option value="159">Q45</option>
+                <option value="160">Q5</option>
+                <option value="161">Q50</option>
+                <option value="162">Q60</option>
+                <option value="163">Q7</option>
+                <option value="164">QX30</option>
+                <option value="165">QX50</option>
+                <option value="166">QX56</option>
+                <option value="167">QX60</option>
+                <option value="168">QX70</option>
+                <option value="169">QX80</option>
+                <option value="170">R8</option>
+                <option value="171">Rainier</option>
+                <option value="172">Ram</option>
+                <option value="173">Ranger</option>
+                <option value="174">RDX</option>
+                <option value="175">Regal</option>
+                <option value="176">Rendezvous</option>
+                <option value="177">Renegade</option>
+                <option value="178">Ridgeline</option>
+                <option value="179">Rio</option>
+                <option value="180">Riviera</option>
+                <option value="181">RLX</option>
+                <option value="182">Rodeo</option>
+                <option value="183">Romeo</option>
+                <option value="184">Rondo</option>
+                <option value="185">Rover</option>
+                <option value="186">RS</option>
+                <option value="187">RS4</option>
+                <option value="188">RS6</option>
+                <option value="189">RSX</option>
+                <option value="190">RX</option>
+                <option value="191">S3</option>
+                <option value="192">S4</option>
+                <option value="193">S5</option>
+                <option value="194">S6</option>
+                <option value="195">S7</option>
+                <option value="196">S8</option>
+                <option value="197">Safari</option>
+                <option value="198">Santa</option>
+                <option value="199">Savana</option>
+                <option value="200">Sebring</option>
+                <option value="201">Sedona</option>
+                <option value="202">Sephia</option>
+                <option value="203">Seville</option>
+                <option value="204">Sierra</option>
+                <option value="205">Silverado</option>
+                <option value="206">Skylark</option>
+                <option value="207">SLX</option>
+                <option value="208">Sonata</option>
+                <option value="209">Sonic</option>
+                <option value="210">Sonoma</option>
+                <option value="211">Sorento</option>
+                <option value="212">Soul</option>
+                <option value="213">Spark</option>
+                <option value="214">Spectra</option>
+                <option value="215">Sprinter</option>
+                <option value="216">SQ5</option>
+                <option value="217">SRX</option>
+                <option value="218">Stratus</option>
+                <option value="219">STS</option>
+                <option value="220">Suburban</option>
+                <option value="221">Super</option>
+                <option value="222">Tahoe</option>
+                <option value="223">Taurus</option>
+                <option value="224">Terrain</option>
+                <option value="225">Terraza</option>
+                <option value="226">Thunderbird</option>
+                <option value="227">Tiburon</option>
+                <option value="228">TL</option>
+                <option value="229">TrailBlazer</option>
+                <option value="230">Transit</option>
+                <option value="231">Traverse</option>
+                <option value="232">Trax</option>
+                <option value="233">Trooper</option>
+                <option value="234">TSX</option>
+                <option value="235">TT</option>
+                <option value="236">TTS</option>
+                <option value="237">Tucson</option>
+                <option value="238">Uplander</option>
+                <option value="239">Veloster</option>
+                <option value="240">Venture</option>
+                <option value="241">Veracruz</option>
+                <option value="242">Verano</option>
+                <option value="243">Viper</option>
+                <option value="244">Volt</option>
+                <option value="245">Voyager</option>
+                <option value="246">Windstar</option>
+                <option value="247">Wrangler</option>
+                <option value="248">X1</option>
+                <option value="249">X3</option>
+                <option value="250">X4</option>
+                <option value="251">X5</option>
+                <option value="252">X6</option>
+                <option value="253">XF</option>
+                <option value="254">XFR</option>
+                <option value="255">XFS</option>
+                <option value="256">XG</option>
+                <option value="257">XJ</option>
+                <option value="258">XKR</option>
+                <option value="259">XKXK</option>
+                <option value="260">XLR</option>
+                <option value="261">XT5</option>
+                <option value="262">XTS</option>
+                <option value="263">Yukon</option>
+                <option value="264">Z3</option>
+                <option value="265">Z4</option>
+                <option value="266">ZDX</option>
+            </select>
+        </div>
+        <div class="field">
+            <label>Transmission</label>
+            <select class="ui selection dropdown" name="Car_Transmission">
+                <option value=""></option>
+                <option value="1">Manual</option>
+                <option value="2">Automatic</option>
+                <option value="3">Speed</option>
+                <option value="4">Auto</option>
+        <button class="ui button" type="submit">Submit</button>
+    </form>
+</div>
+<div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui horizontal inverted small divided link list">
+            <a class="item" href="#">CEDB 1260 - BIG DATA ANALYTICS</a>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
