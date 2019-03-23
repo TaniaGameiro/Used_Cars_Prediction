@@ -31,7 +31,7 @@ def predict_price():
     # change the dataframe according to the inputs
     df_prediction.at[0, 'Year'] = Year
     df_prediction.at[0, 'Make_'+str(Make)] = 1.0
-    df_prediction.at[0, 'Model'+str(Model)] = 1.0
+    df_prediction.at[0, 'Model_'+str(Model)] = 1.0
     df_prediction.at[0, 'Transmission_'+str(Transmission)] = 1.0
     print(df_prediction)
 
